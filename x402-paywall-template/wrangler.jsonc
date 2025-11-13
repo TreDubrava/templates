@@ -1,0 +1,19 @@
+{
+	"compatibility_date": "2025-10-08",
+	"main": "src/server/index.ts",
+	"name": "x402-paywall-template",
+	"upload_source_maps": true,
+	"observability": {
+		"enabled": true
+	},
+	"vars": {
+		"FACILITATOR_URL": "https://x402.org/facilitator"
+	},
+	"assets": {
+		"binding": "ASSETS",
+		"directory": "./public"
+	},
+	"build": {
+		"command": "esbuild src/client/index.tsx --bundle --splitting --format=esm --platform=browser --outdir=public/dist"
+	}
+}

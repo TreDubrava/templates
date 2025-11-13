@@ -1,0 +1,45 @@
+{
+	"name": "x402-paywall-template",
+	"description": "Paywall gated API endpoints using the x402 protocol with stateless cookie-based authentication.",
+	"private": true,
+	"cloudflare": {
+		"label": "x402 Paywall",
+		"products": [
+			"Workers"
+		],
+		"categories": [
+			"starter",
+			"ai"
+		]
+	},
+	"scripts": {
+		"cf-typegen": "wrangler types ./src/server/worker-configuration.d.ts",
+		"check": "tsc --project src/client && tsc --project src/server && wrangler deploy --dry-run",
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"test": "vitest run ",
+		"test:watch": "vitest"
+	},
+	"dependencies": {
+		"@coinbase/x402": "^0.7.1",
+		"hono": "^4.10.4",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
+		"x402": "^0.7.1",
+		"x402-hono": "^0.7.1"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0",
+		"@typescript-eslint/eslint-plugin": "^8.46.4",
+		"@typescript-eslint/parser": "^8.46.4",
+		"esbuild": "0.25.2",
+		"eslint": "^9.39.1",
+		"prettier": "^3.6.2",
+		"tsx": "^4.20.6",
+		"typescript": "^5.8.3",
+		"viem": "^2.38.6",
+		"vitest": "^3.2.4",
+		"wrangler": "^4.46.0"
+	}
+}

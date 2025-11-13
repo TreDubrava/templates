@@ -77,6 +77,9 @@
     },
     "react-router-postgres-ssr-template": {
       "package_json_hash": "fa522a1710c99972d76a0f15ee82a7fd848b5551"
+    },
+    "x402-paywall-template": {
+      "package_json_hash": "23616b329a9b11d3c76bddc65c0eaeef6da8ecc2"
     }
   }
 }
