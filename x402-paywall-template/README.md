@@ -90,9 +90,7 @@ src/
 │   ├── index.ts     # Main worker entry point
 │   ├── auth.ts      # Payment & cookie authentication
 │   └── jwt.ts       # JWT token utilities
-├── types.ts         # Shared TypeScript types
-└── test/            # Vitest test suite
-    └── x402-flow.test.ts
+└── types.ts         # Shared TypeScript types
 ```
 
 ## API Endpoints
@@ -119,18 +117,18 @@ Protected endpoint requiring payment OR valid authentication cookie.
 
 ```json
 {
-  "error": "Payment required",
-  "accepts": [
-    {
-      "scheme": "evm",
-      "network": "base-sepolia",
-      "maxAmountRequired": "10000",
-      "payTo": "0x...",
-      "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
-      "description": "Access to premium content for 1 hour"
-    }
-  ],
-  "x402Version": 1
+	"error": "Payment required",
+	"accepts": [
+		{
+			"scheme": "evm",
+			"network": "base-sepolia",
+			"maxAmountRequired": "10000",
+			"payTo": "0x...",
+			"asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+			"description": "Access to premium content for 1 hour"
+		}
+	],
+	"x402Version": 1
 }
 ```
 
@@ -138,12 +136,12 @@ Protected endpoint requiring payment OR valid authentication cookie.
 
 ```json
 {
-  "message": "Welcome to premium content!",
-  "data": {
-    "secret": "This is valuable premium data",
-    "timestamp": "2025-11-13T20:00:00.000Z",
-    "authenticated": "via payment"
-  }
+	"message": "Welcome to premium content!",
+	"data": {
+		"secret": "This is valuable premium data",
+		"timestamp": "2025-11-13T20:00:00.000Z",
+		"authenticated": "via payment"
+	}
 }
 ```
 
@@ -160,22 +158,6 @@ The deployed application includes a built-in test client:
 
 ⚠️ **Use testnet wallets only. Never use real funds.**
 
-### Automated Tests
-
-Run the test suite:
-
-```bash
-npm test
-```
-
-Tests verify:
-
-- Public endpoints are accessible
-- Protected endpoints return 402 without payment
-- Valid payments grant access and issue cookies
-- Cookies enable subsequent access without payment
-- Invalid payments and cookies are rejected
-
 ## Customization
 
 ### Change Payment Amount
@@ -184,9 +166,9 @@ Edit `src/server/index.ts`:
 
 ```typescript
 createProtectedRoute({
-  price: "$0.05", // Change amount here
-  network: "base-sepolia",
-  description: "Access to premium content for 1 hour",
+	price: "$0.05", // Change amount here
+	network: "base-sepolia",
+	description: "Access to premium content for 1 hour",
 });
 ```
 
@@ -196,8 +178,8 @@ Edit `src/server/index.ts`:
 
 ```typescript
 const token = await generateJWT(
-  c.env.JWT_SECRET,
-  7200 // 2 hours (in seconds)
+	c.env.JWT_SECRET,
+	7200, // 2 hours (in seconds)
 );
 ```
 

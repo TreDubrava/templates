@@ -13,12 +13,10 @@
 		]
 	},
 	"scripts": {
-		"cf-typegen": "wrangler types ./src/server/worker-configuration.d.ts",
+		"cf-typegen": "wrangler types",
 		"check": "tsc --project src/client && tsc --project src/server && wrangler deploy --dry-run",
 		"deploy": "wrangler deploy",
-		"dev": "wrangler dev",
-		"test": "vitest run ",
-		"test:watch": "vitest"
+		"dev": "wrangler dev"
 	},
 	"dependencies": {
 		"@coinbase/x402": "^0.7.1",
@@ -39,7 +37,6 @@
 		"tsx": "^4.20.6",
 		"typescript": "^5.8.3",
 		"viem": "^2.38.6",
-		"vitest": "^3.2.4",
 		"wrangler": "^4.46.0"
 	}
 }

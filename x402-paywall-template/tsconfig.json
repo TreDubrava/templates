@@ -8,8 +8,11 @@
 		"moduleResolution": "bundler",
 		"strict": true,
 		"skipLibCheck": true,
-		"noEmit": true
+		"noEmit": true,
+		"types": [
+			"./worker-configuration.d.ts",
+		]
 	},
-	"include": ["src/**/*", "worker-configuration.d.ts"],
+	"include": ["src/**/*", "./worker-configuration.d.ts"],
 	"exclude": ["node_modules", "dist", ".wrangler"]
 }
